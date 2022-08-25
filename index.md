@@ -1,5 +1,5 @@
 <html>
-<body bgcolor="#121212">
+<body style="background-color:#121212">
 </html>
 
 # Menace Digital Notebook
