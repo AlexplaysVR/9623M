@@ -1,1 +1,6 @@
-#This Is Our Team!
+---
+layout: default
+---
+
+
+# This Is Our Team!
