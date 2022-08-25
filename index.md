@@ -1,4 +1,6 @@
-<body style="background-color:#121212">
+---
+layout: default
+---
 <div class="topnav">
   <a class="active" href="#home">Home</a>
   <a href="#news">News</a>
