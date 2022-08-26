@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: directory
 ---
 
 # Work In Progress
