@@ -4,6 +4,7 @@
 @import "{{ site.theme }}";
 
 body {
+    margin-top: 30px; /* Add a top margin to avoid content overlay */
     background-color: #121212;
     color: white;
   }
