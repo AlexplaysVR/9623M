@@ -1,7 +1,9 @@
 ---
 layout: default
 ---
-
+<head>
+<link rel="icon" href="assets/img/warpdrive-color-symbol.svg">
+</head>
 <h1> <span style="color:white">Menace Digital Notebook</span> </h1>
 <body text="#ffffff" link="#ff0000" vlink="#ff0000" alink="#ff0000">
 <h2 style="color:white"> Welcome to our Digital Notebook! </h2>
