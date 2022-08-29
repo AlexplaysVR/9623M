@@ -1,6 +1,7 @@
 remote_theme: pages-themes/minimal@v0.2.0
 title: 9623M Robotics Notebook
 logo: assets/img/warpdrive-color-lockup.svg
+falcon: assets/img/warpdrive-color-symbol.svg
 plugins:
   - jekyll-relative-links
 relative_links:
