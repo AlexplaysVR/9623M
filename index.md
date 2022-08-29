@@ -1,9 +1,6 @@
 ---
 layout: default
 ---
-<head>
- <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?">
-</head>
 
 <h1> <span style="color:white">Menace Digital Notebook</span> </h1>
 <body text="#ffffff" link="#ff0000" vlink="#ff0000" alink="#ff0000">
