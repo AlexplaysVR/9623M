@@ -2,4 +2,4 @@
 layout: entry
 ---
 
-<h1> <span style="color:white"> Example Entry </h1>
+<h1> <span style="color:white"> Example Entry</span> </h1>
