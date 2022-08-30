@@ -9,3 +9,4 @@ layout: directory
 <p> </p>
 <a href="Entries/08-23-2022">~ First Meeting - 08/23/2022 </a>
 <p> </p>
+<a href="Entries/08-25-2022">~ First Objectives - 08/25/2022 </a>
