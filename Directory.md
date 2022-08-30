@@ -3,10 +3,11 @@ layout: directory
 ---
 
 <h1> <span style="color:white">Directory</span> </h1>
-<h2 style="color:white"> This is where you can find all of our notebook entries! Important Milestones are found on the homepage. Entries are in order by date </h2>
+<h2 style="color:white"> This is where you can find all of our notebook entries! Important Milestones are found on the homepage. Entries are in order by date (Newest at the Top) </h2>
 <p>Entries:</p>
-<a href="Entries/EntryExample">~ Example Entry </a>
+<a href="Entries/08-25-2022">~ First Objectives - 08/25/2022 </a>
 <p> </p>
 <a href="Entries/08-23-2022">~ First Meeting - 08/23/2022 </a>
 <p> </p>
-<a href="Entries/08-25-2022">~ First Objectives - 08/25/2022 </a>
+<a href="Entries/EntryExample">~ Example Entry </a>
+<p> </p>
