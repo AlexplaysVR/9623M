@@ -28,3 +28,14 @@ layout: entry
   <input type="checkbox" disabled checked="checked">
   <span class="checkmark"></span>
 </label>
+
+<body text="#ffffff" link="#ff0000" vlink="#ff0000" alink="#ff0000"> 
+<p> This is where you can write your entry info! New paragraphs can be added using the paragraph Function as shown below </p>
+
+<pre>
+    <code>
+    <xmp>
+    <p>This Is An Example!</p>
+    </xmp>
+    </code>
+</pre>
