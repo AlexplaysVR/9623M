@@ -4,6 +4,7 @@ layout: entry
 <h1> <span style="color:white"> Example Entry</span> </h1>
 
 <h2 class="attendance"> <span style="color:red"> Attendance</span> 
+
 <label class="container">Alex
   <input type="checkbox" disabled checked="checked">
   <span class="checkmark"></span>
@@ -47,5 +48,46 @@ layout: entry
     <xmp>
     <p style="color:white">This Is An Example!</p>
     </xmp>
+    </code>
+</pre>
+
+<p style="color:white">This is a template for entries, You can copy and paste this into a new markdown file and start writing an entry</p>
+
+<pre>
+    <code>
+        <xmp>
+---
+layout: entry
+---
+<h1> <span style="color:white">Date - Title</span> </h1>
+
+<h2 class="attendance"> <span style="color:red"> Attendance</span> 
+
+<label class="container">Alex
+  <input type="checkbox" disabled checked="checked">
+  <span class="checkmark"></span>
+</label>
+
+<label class="container">Brayden
+  <input type="checkbox" disabled checked="checked">
+  <span class="checkmark"></span>
+</label>
+
+<label class="container">Malachi
+  <input type="checkbox" disabled checked="checked">
+  <span class="checkmark"></span>
+</label>
+
+<label class="container">Michael
+  <input type="checkbox" disabled checked="checked">
+  <span class="checkmark"></span>
+</label>
+
+<label class="container">Five
+  <input type="checkbox" disabled checked="checked">
+  <span class="checkmark"></span>
+</label>
+<p style="color:white">Entry Text</p>
+        </xmp>
     </code>
 </pre>
