@@ -39,3 +39,5 @@ layout: entry
     </xmp>
     </code>
 </pre>
+
+<p> As Shown in the last example code can be displayed in entries by using a code funtion </p>
