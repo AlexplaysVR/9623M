@@ -5,27 +5,27 @@ layout: entry
 
 <h2 class="attendance"> <span style="color:red"> Attendance</span> 
 
-<label class="container">Alex
+<label class="container" style="color:white">Alex
   <input type="checkbox" disabled checked="checked">
   <span class="checkmark"></span>
 </label>
 
-<label class="container">Brayden
+<label class="container" style="color:white">Brayden
   <input type="checkbox" disabled checked="checked">
   <span class="checkmark"></span>
 </label>
 
-<label class="container">Malachi
+<label class="container" style="color:white">Malachi
   <input type="checkbox" disabled checked="checked">
   <span class="checkmark"></span>
 </label>
 
-<label class="container">Michael
+<label class="container" style="color:white">Michael
   <input type="checkbox" disabled checked="checked">
   <span class="checkmark"></span>
 </label>
 
-<label class="container">Five
+<label class="container" style="color:white">Five
   <input type="checkbox" disabled checked="checked">
   <span class="checkmark"></span>
 </label>
@@ -63,27 +63,27 @@ layout: entry
 
 <h2 class="attendance"> <span style="color:red"> Attendance</span> 
 
-<label class="container">Alex
+<label class="container" style="color:white">Alex
   <input type="checkbox" disabled checked="checked">
   <span class="checkmark"></span>
 </label>
 
-<label class="container">Brayden
+<label class="container" style="color:white">Brayden
   <input type="checkbox" disabled checked="checked">
   <span class="checkmark"></span>
 </label>
 
-<label class="container">Malachi
+<label class="container" style="color:white">Malachi
   <input type="checkbox" disabled checked="checked">
   <span class="checkmark"></span>
 </label>
 
-<label class="container">Michael
+<label class="container" style="color:white">Michael
   <input type="checkbox" disabled checked="checked">
   <span class="checkmark"></span>
 </label>
 
-<label class="container">Five
+<label class="container" style="color:white">Five
   <input type="checkbox" disabled checked="checked">
   <span class="checkmark"></span>
 </label>
@@ -91,3 +91,5 @@ layout: entry
         </xmp>
     </code>
 </pre>
+
+<p style="color:white:">Please format files with this template name "00-00-0000.md" (aka Day-Month-Year) within the "Entries" Folder, Titles can be added to the Directory page. For Important Milestones for Judges to view please contact Alex to add it to the HomePage!</p>
