@@ -6,4 +6,6 @@ layout: directory
 <h2 style="color:white"> This is where you can find all of our notebook entries! Important Milestones are found on the homepage. Entries are in order by date </h2>
 <p>Entries:</p>
 <a href="Entries/EntryExample">~ Example Entry </a>
+<p> </p>
 <a href="Entries/08-23-2022">~ First Meeting - 08/23/2022 </a>
+<p> </p>
