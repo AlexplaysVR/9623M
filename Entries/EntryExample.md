@@ -40,4 +40,12 @@ layout: entry
     </code>
 </pre>
 
-<p> As Shown in the last example code can be displayed in entries by using a code funtion </p>
+<p style="color:white">As of right now you need to define the text color of your paragraphs because of the way markdown defaults the colors. This can be done by defining the color using the "style" atribute</p>
+
+<pre>
+    <code>
+    <xmp>
+    <p style="color:white">This Is An Example!</p>
+    </xmp>
+    </code>
+</pre>
