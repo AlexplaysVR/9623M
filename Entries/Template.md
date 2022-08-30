@@ -5,6 +5,8 @@ layout: entry
 
 <h2 class="attendance"> <span style="color:red"> Attendance</span> 
 
+<p> </p>
+
 <label class="container" style="color:white">Alex
   <input type="checkbox" disabled checked="checked">
   <span class="checkmark"></span>
