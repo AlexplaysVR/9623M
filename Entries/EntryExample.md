@@ -1,10 +1,9 @@
 ---
 layout: entry
 ---
-
 <h1> <span style="color:white"> Example Entry</span> </h1>
 
-<h2> <span style="color:red"> Attendance</span> 
+<h2 class="attendance"> <span style="color:red"> Attendance</span> 
 <label class="container">Alex
   <input type="checkbox" disabled checked="checked">
   <span class="checkmark"></span>
