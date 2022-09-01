@@ -27,7 +27,12 @@ layout: entry
   <span class="checkmark"></span>
 </label>
 
-<label class="container" style="color:white">Five
+<label class="container" style="color:white">Tate
+  <input type="checkbox" disabled checked="checked">
+  <span class="checkmark"></span>
+</label>
+
+<label class="container" style="color:white">{Placeholder}
   <input type="checkbox" disabled checked="checked">
   <span class="checkmark"></span>
 </label>
