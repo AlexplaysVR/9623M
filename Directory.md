@@ -14,5 +14,7 @@ layout: directory
 <p>Prototyping - Disk Launcher:</p>
 <a href="Entries/08-30-2022">~ Flywheel Prototypes & Notebook - 08/30/2022 </a>
 <p> </p>
+<a href="Entries/09-01-2022">~ Continued Flywheel Prototypes - 09/01/2022 </a>
+<p> </p>
 
 
