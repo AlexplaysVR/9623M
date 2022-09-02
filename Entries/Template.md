@@ -32,7 +32,7 @@ layout: entry
   <span class="checkmark"></span>
 </label>
 
-<label class="container" style="color:white">{Placeholder}
+<label class="container" style="color:white">Taven
   <input type="checkbox" disabled checked="checked">
   <span class="checkmark"></span>
 </label>
