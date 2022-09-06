@@ -8,3 +8,7 @@ layout: about
 <h2 style="color:blue">Alex Elkins, 16y, Junior</h2>
 
 <p style="color:white">- Tipping Point Veteran, Head Programmer, Team Captain, Driver, Notebook</p>
+<p> </p>
+<img src="/assets/img/humanplaceholder.png" alt="Brayden Hoxie" width="400" height="400">
+<h2 style="color:blue">Braydon Hoxie, 16y, Junior</h2>
+<p style="color:white">- Robotics "Freshmen", Builder</p>
