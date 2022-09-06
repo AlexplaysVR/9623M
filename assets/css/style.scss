@@ -46,7 +46,7 @@ body {
   position: relative;
   padding-left: 35px;
   margin-bottom: 12px;
-  cursor: pointer;
+  cursor: default;
   font-size: 22px;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -149,6 +149,7 @@ body {
 }
 .return:hover {
   background:    #11b4e6;
+  cursor: pointer;
   border-radius: 11px;
   padding:       10px 35px;
   color:         #ffffff;
