@@ -11,7 +11,7 @@ layout: directory
 <p> </p>
 <a href="Entries/08-25-2022">~ First Objectives - 08/25/2022 </a>
 <p> </p>
-<p>Prototyping - Disk Launcher:</p>
+<p>Prototyping - Disk Launcher(Redirected to Intake, Will return to Launcher):</p>
 <a href="Entries/08-30-2022">~ Flywheel Prototypes & Notebook - 08/30/2022 </a>
 <p> </p>
 <a href="Entries/09-01-2022">~ Redirected to Intake Prototypes - 09/01/2022 </a>
