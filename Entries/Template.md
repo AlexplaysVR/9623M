@@ -37,3 +37,8 @@ layout: entry
   <span class="checkmark"></span>
 </label>
 <p style="color:white">Entry Text</p>
+
+<!-- Place This Redirect Button Underneath all other text and images on page-->
+<a href="https://robotics.oavr.net/Directory">
+<button class="return" type="button">Return to Directory</button>
+</a>
