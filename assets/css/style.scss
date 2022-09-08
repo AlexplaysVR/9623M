@@ -4,7 +4,7 @@
 @import "{{ site.theme }}";
 
 body {
-    margin-top: 30px; /* Add a top margin to avoid content overlay */
+    margin-top: 60px; /* Add a top margin to avoid content overlay */
     background-color: #121212;
     color: white;
     padding: 0%;
@@ -124,7 +124,7 @@ body {
 /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
 @media screen and (max-width: 600px) {
   body{
-    margin-top: 65px;
+    margin-top: 50px;
     margin: auto;
   }
   .topnav.responsive {position: relative;}
@@ -141,7 +141,7 @@ body {
   div.wrapper {
     width: auto;
     margin: 15px;
-    margin-top: 60px;
+    margin-top: auto;
 }
 }
 /* Hide the link that should open and close the topnav on small screens */
