@@ -124,6 +124,7 @@ body {
 @media screen and (max-width: 600px) {
   body{
     margin-top: 50px;
+    margin: auto;
   }
   .topnav.responsive {position: relative;}
   .topnav.responsive a.icon {
@@ -136,6 +137,10 @@ body {
     display: block;
     text-align: left;
   }
+  div.wrapper {
+    width: auto;
+    margin: 17px;
+}
 }
 /* Hide the link that should open and close the topnav on small screens */
 .topnav .icon {
