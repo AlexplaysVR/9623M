@@ -9,26 +9,26 @@ layout: about
 <p style="color:white">- Tipping Point Veteran, Head Programmer, Team Captain, Driver, Notebook</p>
 
 <p> </p>
-<img src="/assets/img/humanplaceholder.png" alt="Brayden Hoxie" width="400" height="400">
-<h2 style="color:blue">Braydon Hoxie, 16y, Junior</h2>
-<p style="color:white">- Robotics "Freshmen", Builder</p>
-
-<p> </p>
-<img src="/assets/img/humanplaceholder.png" alt="Brayden Hoxie" width="400" height="400">
+<img src="/assets/img/humanplaceholder.png" alt="Malachi Cole" width="400" height="400">
 <h2 style="color:blue">Malachi Cole, 14y, Freshman</h2>
 <p style="color:white">- Robotics "Freshmen", Builder, Student Programmer</p>
 
 <p> </p>
-<img src="/assets/img/humanplaceholder.png" alt="Brayden Hoxie" width="400" height="400">
+<img src="/assets/img/humanplaceholder.png" alt="Micheal Lemieux" width="400" height="400">
 <h2 style="color:blue">Micheal Lemieux, 14y, Freshman</h2>
 <p style="color:white">- Robotics "Freshmen", Builder, Student Programmer</p>
 
 <p> </p>
 <img src="/assets/img/humanplaceholder.png" alt="Brayden Hoxie" width="400" height="400">
+<h2 style="color:blue">Braydon Hoxie, 16y, Junior</h2>
+<p style="color:white">- Robotics "Freshmen", Builder</p>
+
+<p> </p>
+<img src="/assets/img/humanplaceholder.png" alt="Tate Bernard" width="400" height="400">
 <h2 style="color:blue">Tate Bernard, 14y, Freshman</h2>
 <p style="color:white">- Robotics "Freshmen", Builder</p>
 
 <p> </p>
-<img src="/assets/img/humanplaceholder.png" alt="Brayden Hoxie" width="400" height="400">
+<img src="/assets/img/humanplaceholder.png" alt="Placeholder" width="400" height="400">
 <h2 style="color:blue">Placeholder, 14y, Freshman</h2>
 <p style="color:white">- Robotics "Freshmen", Builder</p>
