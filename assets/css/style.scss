@@ -48,6 +48,11 @@ body {
     float: right;
     display: block;
   }
+  div.wrapper {
+    width: auto;
+    margin: 15px;
+    margin-top: 70px;
+}
 }
 
 /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
@@ -67,10 +72,6 @@ body {
     display: block;
     text-align: left;
   }
-  div.wrapper {
-    width: auto;
-    margin: 15px;
-    margin-top: auto;
 }
 }
 /* Hide the link that should open and close the topnav on small screens */
