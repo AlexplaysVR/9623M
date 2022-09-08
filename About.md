@@ -29,6 +29,6 @@ layout: about
 <p style="color:white">- Robotics "Freshmen", Builder</p>
 
 <p> </p>
-<img src="/assets/img/humanplaceholder.png" alt="Placeholder" width="400" height="400">
-<h2 style="color:blue">Placeholder, 14y, Freshman</h2>
-<p style="color:white">- Robotics "Freshmen", Builder</p>
+<img src="/assets/img/humanplaceholder.png" alt="Taven Wilson" width="400" height="400">
+<h2 style="color:blue">Taven Wilson, 14y, Freshman</h2>
+<p style="color:white">- Robotics "Freshmen", Builder, Student Programmer</p>
