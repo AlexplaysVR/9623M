@@ -293,10 +293,7 @@ footer {
 .topnav {
     background-color: #333;
     overflow: hidden;
-    position: fixed; /* Set the navbar to fixed position */
-    z-index: 2; /* Set the z-index of the navbar to 2, Fixes Overlap */
-    top: 0; /* Position the navbar at the top of the page */
-    left: 0;
+v
     width: 100%; /* Full width */
     margin: auto;
   }
@@ -344,9 +341,10 @@ footer {
   }
   .topnav.responsive {position: relative;}
   .topnav.responsive a.icon {
-    position: absolute;
-    right: 0;
-    top: 0;
+    position: fixed; /* Set the navbar to fixed position */
+    z-index: 2; /* Set the z-index of the navbar to 2, Fixes Overlap */
+    top: 0; /* Position the navbar at the top of the page */
+    left: 0;
   }
   .topnav.responsive a {
     float: none;
