@@ -16,7 +16,7 @@ layout: directory
 <p> </p>
 <h3><a href="Entries/09-01-2022">~ Redirected to Intake Prototypes - 09/01/2022 </a></h3>
 <p> </p>
-<h3><a href="Entries/09-06-2022">~Base Complete - Intake Prototypes Continued - 09/06/2022</a></h3>
+<h3><a href="Entries/09-06-2022">~ Base Complete - Intake Prototypes Continued - 09/06/2022</a></h3>
 <p> </p>
 <h3><a href="Entries/09-08-2022">~ Intake Prototypes Continued - 09/08/2022</a></h3>
 <p> </p>
