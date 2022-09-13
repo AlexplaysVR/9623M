@@ -26,4 +26,4 @@ layout: directory
 <p> </p>
 <h3><a href="Entries/09-13-2022">&#8226; Intake Prototypes Continued - 09/13/2022</a></h3>
 
-
+# Wait can i just write text and it will work?
