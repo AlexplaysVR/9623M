@@ -25,3 +25,9 @@ layout: directory
 <h3><a href="Entries/09-08-2022">&#8226; Intake Started - Intake Prototypes Continued - 09/08/2022</a></h3>
 <p> </p>
 <h3><a href="Entries/09-13-2022">&#8226; Intake Prototypes Continued - 09/13/2022</a></h3>
+<p> </p>
+<h3><a href="Entries/09-15-2022">&#8226; Intake Prototypes Continued - 09/15/2022</a></h3>
+<h3 style="color:white">Flywheel and Intake Combined Prototyping</h3>
+*Team Revision, One Less Member, Split Workflow*
+<p> </p>
+<h3><a href="Entries/09-20-2022">&#8226; Flywheel And Intake Prototyping - 09/20/2022</a></h3>
