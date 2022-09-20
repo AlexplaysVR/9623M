@@ -1,7 +1,19 @@
 #include "main.h"
 
-
-
+//Motor Declarations
+#define LEFT_FRONT_MOTOR 1
+#define LEFT_BACK_MOTOR 2
+#define RIGHT_FRONT_MOTOR 3
+#define RIGHT_BACK_MOTOR 4
+//Controller Inputs
+#define TOP_RIGHT_SHOLDER DIGITAL_R1
+#define BOTTOM_RIGHT_SHOLDER DIGITAL_R2
+#define TOP_LEFT_SHOLDER DIGITAL_L1
+#define BOTTOM_LEFT_SHOLDER DIGITAL_L2
+#define RIGHT_JOYSTICK_X ANALOG_RIGHT_X
+#define RIGHT_JOYSTICK_Y ANALOG_RIGHT_Y
+#define LEFT_JOYSTICK_X ANALOG_LEFT_X
+#define LEFT_JOYSTICK_Y ANALOG_LEFT_Y
 /**
  * Runs initialization code. This occurs as soon as the program is started.
  *
@@ -58,5 +70,30 @@ void autonomous() {}
  * task, not resume it from where it left off.
  */
 void opcontrol() {
-	
+//Initialize Motors
+	pros::Motor left_front_mtr(LEFT_FRONT_MOTOR);
+	pros::Motor left_back_mtr(LEFT_BACK_MOTOR, true);
+	pros::Motor right_front_mtr(RIGHT_FRONT_MOTOR, true);
+	pros::Motor right_back_mtr(RIGHT_BACK_MOTOR);
+//Initialize Controller
+	pros::Controller master(pros::E_CONTROLLER_MASTER);
+
+	while (true) {
+		//Strafe Control
+		int turn = master.get_analog(RIGHT_JOYSTICK_X);
+		int power = master.get_analog(LEFT_JOYSTICK_Y);
+		int strafe = master.get_analog(LEFT_JOYSTICK_X);
+		//Math for Strafe Control
+		int turnreversed = turn;
+		int straferevered = strafe;
+		int fl = power + turnreversed + straferevered;
+		int rl = power + turnreversed - straferevered;
+		int fr = power - turnreversed - straferevered;
+		int rr = power - turnreversed + straferevered;
+
+		left_front_mtr.move(fl);
+		left_back_mtr.move(rl);
+		right_front_mtr.move(fr);
+		right_back_mtr.move(rr);
+	}
 }
