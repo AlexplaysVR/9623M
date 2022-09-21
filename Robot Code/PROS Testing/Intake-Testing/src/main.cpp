@@ -14,6 +14,23 @@
 #define RIGHT_JOYSTICK_Y ANALOG_RIGHT_Y
 #define LEFT_JOYSTICK_X ANALOG_LEFT_X
 #define LEFT_JOYSTICK_Y ANALOG_LEFT_Y
+void autonselector(){
+		//Initialize Motors
+	pros::Motor left_front_mtr(LEFT_FRONT_MOTOR);
+	pros::Motor left_back_mtr(LEFT_BACK_MOTOR, true);
+	pros::Motor right_front_mtr(RIGHT_FRONT_MOTOR, true);
+	pros::Motor right_back_mtr(RIGHT_BACK_MOTOR);
+//Initialize Controller
+	pros::Controller master(pros::E_CONTROLLER_MASTER);
+	pros::delay(100);
+	//Create a RPM gauge using LVGL
+	lv_obj_t * rpm_gauge = lv_gauge_create(lv_scr_act(), NULL);
+	lv_obj_set_size(rpm_gauge, 200, 200);
+	lv_obj_align(rpm_gauge, NULL, LV_ALIGN_CENTER, 0, 0);
+	lv_gauge_set_range(rpm_gauge, 0, 100);
+	lv_gauge_set_value(rpm_guage, 1, 50);
+	lv_obj_set_pos(rpm_gauge, 0,0);
+}
 /**
  * Runs initialization code. This occurs as soon as the program is started.
  *
@@ -21,8 +38,8 @@
  * to keep execution time for this mode under a few seconds.
  */
 void initialize() {
-	pros::lcd::initialize();
-	pros::lcd::set_text(1, "Initializing...");
+	autonselector();
+	pros::delay(100);
 }
 
 /**
@@ -70,13 +87,14 @@ void autonomous() {}
  * task, not resume it from where it left off.
  */
 void opcontrol() {
-//Initialize Motors
+	//Initialize Motors
 	pros::Motor left_front_mtr(LEFT_FRONT_MOTOR);
 	pros::Motor left_back_mtr(LEFT_BACK_MOTOR, true);
 	pros::Motor right_front_mtr(RIGHT_FRONT_MOTOR, true);
 	pros::Motor right_back_mtr(RIGHT_BACK_MOTOR);
 //Initialize Controller
 	pros::Controller master(pros::E_CONTROLLER_MASTER);
+	pros::delay(100);
 
 	while (true) {
 		//Strafe Control

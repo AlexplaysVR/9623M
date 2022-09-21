@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "Robot Code/PROS Testing/Intake-Testing"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"pros.showInstallOnStartup": false
+	}
+}
