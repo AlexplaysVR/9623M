@@ -14,7 +14,7 @@
 #define RIGHT_JOYSTICK_Y ANALOG_RIGHT_Y
 #define LEFT_JOYSTICK_X ANALOG_LEFT_X
 #define LEFT_JOYSTICK_Y ANALOG_LEFT_Y
-void autonselector(){
+void flywheelrpmgauge(double PlaceholderRPMLEFT, double PlaceholderRPMRIGHT){
 		//Initialize Motors
 	pros::Motor left_front_mtr(LEFT_FRONT_MOTOR);
 	pros::Motor left_back_mtr(LEFT_BACK_MOTOR, true);
@@ -22,14 +22,21 @@ void autonselector(){
 	pros::Motor right_back_mtr(RIGHT_BACK_MOTOR);
 //Initialize Controller
 	pros::Controller master(pros::E_CONTROLLER_MASTER);
-	pros::delay(100);
 	//Create a RPM gauge using LVGL
-	lv_obj_t * rpm_gauge = lv_gauge_create(lv_scr_act(), NULL);
-	lv_obj_set_size(rpm_gauge, 200, 200);
-	lv_obj_align(rpm_gauge, NULL, LV_ALIGN_CENTER, 0, 0);
-	lv_gauge_set_range(rpm_gauge, 0, 100);
-	lv_gauge_set_value(rpm_guage, 1, 50);
-	lv_obj_set_pos(rpm_gauge, 0,0);
+	lv_obj_t * rpm_gaugeleft = lv_gauge_create(lv_scr_act(), NULL);
+	lv_obj_set_size(rpm_gaugeleft, 200, 200);
+	lv_obj_align(rpm_gaugeleft, NULL, LV_ALIGN_CENTER, 0, 0);
+	lv_gauge_set_range(rpm_gaugeleft, 0, 500);
+	lv_gauge_set_value(rpm_gaugeleft, 0, PlaceholderRPMLEFT);
+	lv_obj_set_pos(rpm_gaugeleft, 0,0);
+
+	lv_obj_t * rpm_gaugeright = lv_gauge_create(lv_scr_act(), NULL);
+	lv_obj_set_size(rpm_gaugeright, 200, 200);
+	lv_obj_align(rpm_gaugeright, NULL, LV_ALIGN_CENTER, 0, 0);
+	lv_gauge_set_range(rpm_gaugeright, 0, 3000);
+	lv_gauge_set_value(rpm_gaugeright, 0, PlaceholderRPMRIGHT);
+	lv_obj_set_pos(rpm_gaugeright, 0,0);
+	pros::delay(100);
 }
 /**
  * Runs initialization code. This occurs as soon as the program is started.
@@ -38,10 +45,9 @@ void autonselector(){
  * to keep execution time for this mode under a few seconds.
  */
 void initialize() {
-	autonselector();
+	flywheelrpmgauge(50,20);
 	pros::delay(100);
 }
-
 /**
  * Runs while the robot is in the disabled state of Field Management System or
  * the VEX Competition Switch, following either autonomous or opcontrol. When
