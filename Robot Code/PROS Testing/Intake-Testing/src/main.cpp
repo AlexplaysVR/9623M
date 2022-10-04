@@ -1,10 +1,42 @@
-#include "main.h"
+/**
+--------- Program Info ---------
+Name: FlyWheel RPM Data Logger
+Author: AlexplaysVR
+Description: This program is used to log the RPM of a flywheel. This also allows for control over the Flywheels
+Instructions: 
+1. Change Motor Declarations to match your robot
+2. Select DataMode or DriverMode (Shown Below)
+3. Set Target Flywheel RPMs
+--------------------------------
+*/
 
+// -------------------------------
+//Modes
+bool DataMode = true; //Disables Driver Control, Enables Data Collection, Increases Data Collection Speed and Accuracy
+bool DriverMode = false; //Enables Driver Control, Enables Data Collection But, At a slower rate. Reducing Accuracy
+//Flywheel Speed (RPM)
+int targetRIGHTRPM = 2500; //Sets the "target" RPM of the Right Flywheel
+int targetLEFTRPM = 2500; //Sets the "target" RPM of the Left Flywheel
+int datacollectiondelay = 1000; //Sets the delay between data collection (in milliseconds)
+// -------------------------------
+
+//includes
+#include "main.h"
+#include <cstdio>
+#include <iostream>
+//namespaces
+using namespace std;
+using namespace pros;
 //Motor Declarations
 #define LEFT_FRONT_MOTOR 1
 #define LEFT_BACK_MOTOR 2
 #define RIGHT_FRONT_MOTOR 3
 #define RIGHT_BACK_MOTOR 4
+#define LEFT_FLY_MOTOR 5
+#define RIGHT_FLY_MOTOR 6
+//Device Declarations
+#define LEFT_FLY_ENCODER_PORT 7
+#define RIGHT_FLY_ENCODER_PORT 8
 //Controller Inputs
 #define TOP_RIGHT_SHOLDER DIGITAL_R1
 #define BOTTOM_RIGHT_SHOLDER DIGITAL_R2
@@ -14,30 +46,88 @@
 #define RIGHT_JOYSTICK_Y ANALOG_RIGHT_Y
 #define LEFT_JOYSTICK_X ANALOG_LEFT_X
 #define LEFT_JOYSTICK_Y ANALOG_LEFT_Y
-void flywheelrpmgauge(double PlaceholderRPMLEFT, double PlaceholderRPMRIGHT){
-		//Initialize Motors
-	pros::Motor left_front_mtr(LEFT_FRONT_MOTOR);
-	pros::Motor left_back_mtr(LEFT_BACK_MOTOR, true);
-	pros::Motor right_front_mtr(RIGHT_FRONT_MOTOR, true);
-	pros::Motor right_back_mtr(RIGHT_BACK_MOTOR);
+//Flywheel RPM Conversion
+int FlyLeftMotorRPM = targetLEFTRPM * 0.1;
+int FlyRightMotorRPM = targetRIGHTRPM * 0.1;
+/**
+ * Creates and Updates RPM Guage and Displays it on the V5 Screen
+ *
+ * USES LVGL, If ActivateGuage is set to false, the guage will be created and displayed, but will not be updated (Useful for debugging)
+ * while If ActivateGuage is set to true, the guage will be created and displayed, and will be updated (Used For Data Collection)
+ */
+void flywheelrpmgauge(bool ActivateGauge){
+//Initialize Motors
+cout<<"[RPM Guage] Robot Devices Initializing..."<<endl;
+	Motor left_front_mtr(LEFT_FRONT_MOTOR);
+	Motor left_back_mtr(LEFT_BACK_MOTOR, true);
+	Motor right_front_mtr(RIGHT_FRONT_MOTOR, true);
+	Motor right_back_mtr(RIGHT_BACK_MOTOR);
+	Motor left_fly_mtr(LEFT_FLY_MOTOR);
+	Motor right_fly_mtr(RIGHT_FLY_MOTOR, true);
+//Initialize Devices
+	Rotation left_fly_encoder(LEFT_FLY_ENCODER_PORT);
+	Rotation right_fly_encoder(RIGHT_FLY_ENCODER_PORT);
 //Initialize Controller
-	pros::Controller master(pros::E_CONTROLLER_MASTER);
+	Controller master(E_CONTROLLER_MASTER);
+//Finish Initializing
+	delay(100);
+	cout<<"[RPM Guage] Robot Devices Initialized!"<<endl;
+
+
 	//Create a RPM gauge using LVGL
 	lv_obj_t * rpm_gaugeleft = lv_gauge_create(lv_scr_act(), NULL);
 	lv_obj_set_size(rpm_gaugeleft, 200, 200);
 	lv_obj_align(rpm_gaugeleft, NULL, LV_ALIGN_CENTER, 0, 0);
-	lv_gauge_set_range(rpm_gaugeleft, 0, 500);
-	lv_gauge_set_value(rpm_gaugeleft, 0, PlaceholderRPMLEFT);
+	lv_gauge_set_range(rpm_gaugeleft, 0, 2500);
+	lv_gauge_set_value(rpm_gaugeleft, 0, 0);
 	lv_obj_set_pos(rpm_gaugeleft, 0,0);
 
 	lv_obj_t * rpm_gaugeright = lv_gauge_create(lv_scr_act(), NULL);
 	lv_obj_set_size(rpm_gaugeright, 200, 200);
 	lv_obj_align(rpm_gaugeright, NULL, LV_ALIGN_CENTER, 0, 0);
-	lv_gauge_set_range(rpm_gaugeright, 0, 3000);
-	lv_gauge_set_value(rpm_gaugeright, 0, PlaceholderRPMRIGHT);
-	lv_obj_set_pos(rpm_gaugeright, 0,0);
-	pros::delay(100);
+	lv_gauge_set_range(rpm_gaugeright, 0, 2500);
+	lv_gauge_set_value(rpm_gaugeright, 0, 0);
+	lv_obj_set_pos(rpm_gaugeright, 275,0);
+
+	int CPSLEFT = 0;
+	int CPSRIGHT = 0;
+	if(ActivateGauge == false){
+		cout<<"[RPM Guage] RPM Guage Created But Will Not Be Updated! (In Debugging Mode"<<endl;
+	}
+	if(ActivateGauge == true){
+		cout<<"[RPM Guage] RPM Guage Created and Activated!(Output will start when Flywheel RPM is higher that 1rpm)"<<endl;
+	}
+	while (ActivateGauge) {
+		//Update RPM gauge
+		int CPSLEFT = left_fly_encoder.get_velocity();
+		int CPSRIGHT = right_fly_encoder.get_velocity();
+		int RPMLEFT = CPSLEFT * 60;
+		int RPMRIGHT = CPSRIGHT * 60;
+		if (RPMLEFT < 1 and RPMRIGHT < 1){
+			//Disables Output if Motors are not moving, Reduces Excessive Console Spam
+		}
+		else{
+			//Updates RPM Gauge and Outputs RPM to Console for Data Collection
+			lv_gauge_set_value(rpm_gaugeleft, 0, RPMLEFT);
+			lv_gauge_set_value(rpm_gaugeright, 0, RPMRIGHT);
+			cout<<"L: "<<RPMLEFT<<" "<<"R: "<<RPMRIGHT<<endl;
+			delay(20);
+		}
+		if(master.get_digital(DIGITAL_B)){
+			//Stops Flywheels
+			left_fly_mtr.move_velocity(0);
+			right_fly_mtr.move_velocity(0);
+		}
+		if(master.get_digital(DIGITAL_A)){
+			//Starts Flywheels
+			left_fly_mtr.move_velocity(FlyLeftMotorRPM);
+			right_fly_mtr.move_velocity(FlyRightMotorRPM);
+		}
+		delay(datacollectiondelay);
+	}
+	
 }
+
 /**
  * Runs initialization code. This occurs as soon as the program is started.
  *
@@ -45,8 +135,49 @@ void flywheelrpmgauge(double PlaceholderRPMLEFT, double PlaceholderRPMRIGHT){
  * to keep execution time for this mode under a few seconds.
  */
 void initialize() {
-	flywheelrpmgauge(50,20);
-	pros::delay(100);
+	//Nice Itialization Message
+	cout<<"FlyWheel RPM Guage Program Created By AlexplaysVR"<<endl;
+	cout<<"#############################################################"<<endl;
+	cout<<"#                    _                                      #"<<endl;  
+	cout<<"#                  -=\\`\\                                    #"<<endl;  
+	cout<<"#              |\\ ____\\_\\__                                 #"<<endl;  
+	cout<<"#            -=\\c`\"\"\"\"\"\"\" \"`)                               #"<<endl;  
+	cout<<"#               `~~~~~/ /~~`                                #"<<endl;  
+	cout<<"#                 -==/ /                                    #"<<endl;  
+	cout<<"#                   '-'                                     #"<<endl;  
+	cout<<"#                  _  _                                     #"<<endl;  
+	cout<<"#                 ( `   )_                                  #"<<endl;  
+	cout<<"#                (    )    `)                               #"<<endl;  
+	cout<<"#              (_   (_ .  _) _)                             #"<<endl;  
+	cout<<"#                                             _             #"<<endl;  
+	cout<<"#                                            (  )           #"<<endl;  
+	cout<<"#             _ .                         ( `  ) . )        #"<<endl;  
+	cout<<"#           (  _ )_                      (_, _(  ,_)_)      #"<<endl;  
+	cout<<"#         (_  _(_ ,)                                        #"<<endl;  
+	cout<<"#############################################################"<<endl;
+	//Initialize Motors
+cout<<"[Robot Initialization] Robot Devices Initializing..."<<endl;
+	Motor left_front_mtr(LEFT_FRONT_MOTOR);
+	Motor left_back_mtr(LEFT_BACK_MOTOR, true);
+	Motor right_front_mtr(RIGHT_FRONT_MOTOR, true);
+	Motor right_back_mtr(RIGHT_BACK_MOTOR);
+	Motor left_fly_mtr(LEFT_FLY_MOTOR);
+	Motor right_fly_mtr(RIGHT_FLY_MOTOR, true);
+//Initialize Controller
+	Controller master(E_CONTROLLER_MASTER);
+	delay(1000);
+	cout<<"[Robot Initialization] Robot Devices Initialized!"<<endl;
+
+//Toggle Flywheel RPM Guage
+	if (DataMode == true){
+		cout<<"[Robot Initialization] Data Mode Selected!"<<endl;
+		flywheelrpmgauge(true); // Read line 24-29 for usage information
+		delay(500);
+	}
+	else if (DriverMode == true){
+		cout<<"[Robot Initialization] Driver Mode Selected!"<<endl;
+	}
+
 }
 /**
  * Runs while the robot is in the disabled state of Field Management System or
@@ -93,28 +224,34 @@ void autonomous() {}
  * task, not resume it from where it left off.
  */
 void opcontrol() {
-	//Initialize Motors
-	pros::Motor left_front_mtr(LEFT_FRONT_MOTOR);
-	pros::Motor left_back_mtr(LEFT_BACK_MOTOR, true);
-	pros::Motor right_front_mtr(RIGHT_FRONT_MOTOR, true);
-	pros::Motor right_back_mtr(RIGHT_BACK_MOTOR);
-//Initialize Controller
-	pros::Controller master(pros::E_CONTROLLER_MASTER);
-	pros::delay(100);
 
+//Initialize Motors
+cout<<"[Driver Control] Robot Devices Initializing..."<<endl;
+	Motor left_front_mtr(LEFT_FRONT_MOTOR);
+	Motor left_back_mtr(LEFT_BACK_MOTOR, true);
+	Motor right_front_mtr(RIGHT_FRONT_MOTOR, true);
+	Motor right_back_mtr(RIGHT_BACK_MOTOR);
+	Motor left_fly_mtr(LEFT_FLY_MOTOR);
+	Motor right_fly_mtr(RIGHT_FLY_MOTOR, true);
+//Initialize Controller
+	Controller master(E_CONTROLLER_MASTER);
+	delay(100);
+	cout<<"[Driver Control] Robot Devices Initialized!"<<endl;
+	delay(100);
+	cout<<"[Driver Control] Driver Control Enabled!"<<endl;
 	while (true) {
-		//Strafe Control
+		//Strafe Control (Converts Joystick Input to Integer Values)
 		int turn = master.get_analog(RIGHT_JOYSTICK_X);
 		int power = master.get_analog(LEFT_JOYSTICK_Y);
 		int strafe = master.get_analog(LEFT_JOYSTICK_X);
-		//Math for Strafe Control
+		//Math for Strafe Control (Complicated Math, Don't Touch :D)
 		int turnreversed = turn;
 		int straferevered = strafe;
 		int fl = power + turnreversed + straferevered;
 		int rl = power + turnreversed - straferevered;
 		int fr = power - turnreversed - straferevered;
 		int rr = power - turnreversed + straferevered;
-
+		//Set Motor Speeds (relative to controller input)
 		left_front_mtr.move(fl);
 		left_back_mtr.move(rl);
 		right_front_mtr.move(fr);
