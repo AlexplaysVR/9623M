@@ -16,14 +16,15 @@ bool DataMode = true; //Disables Driver Control, Enables Data Collection, Increa
 bool DriverMode = false; //Enables Driver Control, Enables Data Collection But, At a slower rate. Reducing Accuracy
 //Flywheel Speed (RPM)
 int targetRIGHTRPM = 2500; //Sets the "target" RPM of the Right Flywheel
-int targetLEFTRPM = 2500; //Sets the "target" RPM of the Left Flywheel
-int datacollectiondelay = 1000; //Sets the delay between data collection (in milliseconds)
+int targetLEFTRPM = 2000; //Sets the "target" RPM of the Left Flywheel
+int datacollectiondelay = 10; //Sets the delay between data collection (in milliseconds)
 // -------------------------------
 
 //includes
 #include "main.h"
 #include <cstdio>
 #include <iostream>
+#include "display/lvgl.h"
 //namespaces
 using namespace std;
 using namespace pros;
@@ -47,14 +48,21 @@ using namespace pros;
 #define LEFT_JOYSTICK_X ANALOG_LEFT_X
 #define LEFT_JOYSTICK_Y ANALOG_LEFT_Y
 //Flywheel RPM Conversion
-int FlyLeftMotorRPM = targetLEFTRPM * 0.1;
-int FlyRightMotorRPM = targetRIGHTRPM * 0.1;
+int FlyLeftMotorRPM = targetLEFTRPM * 0.25;
+int FlyRightMotorRPM = targetRIGHTRPM * 0.25;
 /**
  * Creates and Updates RPM Guage and Displays it on the V5 Screen
  *
  * USES LVGL, If ActivateGuage is set to false, the guage will be created and displayed, but will not be updated (Useful for debugging)
  * while If ActivateGuage is set to true, the guage will be created and displayed, and will be updated (Used For Data Collection)
  */
+	//\Create Action for the increase RPM button
+	static lv_res_t increase_rpm_left(lv_obj_t * button)
+	{
+		targetRIGHTRPM = targetRIGHTRPM + 100;
+		targetLEFTRPM = targetLEFTRPM + 100;
+		return LV_RES_OK;
+	}
 void flywheelrpmgauge(bool ActivateGauge){
 //Initialize Motors
 cout<<"[RPM Guage] Robot Devices Initializing..."<<endl;
@@ -89,6 +97,55 @@ cout<<"[RPM Guage] Robot Devices Initializing..."<<endl;
 	lv_gauge_set_value(rpm_gaugeright, 0, 0);
 	lv_obj_set_pos(rpm_gaugeright, 275,0);
 
+	//create a button that increases the target RPM using LVGL
+	lv_obj_t * increase_rpm_button_left = lv_btn_create(lv_scr_act(), NULL);
+	lv_obj_set_size(increase_rpm_button_left, 200, 25);
+	lv_obj_align(increase_rpm_button_left, NULL, LV_ALIGN_CENTER, 0, 0);
+	lv_obj_set_pos(increase_rpm_button_left, 0, 150);
+	lv_btn_set_action(increase_rpm_button_left, LV_BTN_ACTION_CLICK, increase_rpm_left);
+	//create a button that decreases the target RPM using LVGL
+	lv_obj_t * decrease_rpm_button_left = lv_btn_create(lv_scr_act(), NULL);
+	lv_obj_set_size(decrease_rpm_button_left, 200, 25);
+	lv_obj_align(decrease_rpm_button_left, NULL, LV_ALIGN_CENTER, 0, 0);
+	lv_obj_set_pos(decrease_rpm_button_left, 0, 200);
+	lv_btn_set_action(decrease_rpm_button_left, LV_BTN_ACTION_CLICK, increase_rpm_left);
+
+	//create a label using LVGL
+	lv_obj_t * increase_rpm_label = lv_label_create(lv_scr_act(), NULL);
+	lv_label_set_text(increase_rpm_label, "Increase RPM");
+	lv_obj_align(increase_rpm_label, increase_rpm_button_left, LV_ALIGN_CENTER, 0, 0);
+	//create a label using LVGL
+	lv_obj_t * decrease_rpm_label = lv_label_create(lv_scr_act(), NULL);
+	lv_label_set_text(decrease_rpm_label, "Decrease RPM");
+	lv_obj_align(decrease_rpm_label, decrease_rpm_button_left, LV_ALIGN_CENTER, 0, 0);
+
+	//create a label using LVGL
+	lv_obj_t * rpm_label = lv_label_create(lv_scr_act(), NULL);
+	lv_label_set_text(rpm_label, "RPM:");
+	lv_obj_align(rpm_label, rpm_gaugeleft, LV_ALIGN_CENTER, 0, 0);
+
+	//create a label using LVGL
+	lv_obj_t * target_rpm_labelleft = lv_label_create(lv_scr_act(), NULL);
+	lv_label_set_text(target_rpm_labelleft, &"Target RPM:" [ targetLEFTRPM]);
+	lv_obj_align(target_rpm_labelleft, NULL, LV_ALIGN_CENTER, 0, 0);
+	lv_obj_set_pos(target_rpm_labelleft, 0, 175);
+
+	//create a label using LVGL
+	lv_obj_t * rpm_labelright = lv_label_create(lv_scr_act(), NULL);
+	lv_label_set_text(rpm_labelright, "RPM:");
+	lv_obj_align(rpm_labelright, rpm_gaugeright, LV_ALIGN_CENTER, 0, 0);
+
+	//create a label using LVGL
+	lv_obj_t * target_rpm_labelright = lv_label_create(lv_scr_act(), NULL);
+	lv_label_set_text(target_rpm_labelright, "Target RPM:");
+	lv_obj_align(target_rpm_labelright, NULL, LV_ALIGN_CENTER, 0, 0);
+	lv_obj_set_pos(target_rpm_labelright, 275, 175);
+
+	//create a label using LVGL
+	lv_obj_t * rpm_labelleft = lv_label_create(lv_scr_act(), NULL);
+	lv_label_set_text(rpm_labelleft, "RPM:");
+	lv_obj_align(rpm_labelleft, rpm_gaugeleft, LV_ALIGN_CENTER, 0, 0);
+
 	int CPSLEFT = 0;
 	int CPSRIGHT = 0;
 	if(ActivateGauge == false){
@@ -99,10 +156,10 @@ cout<<"[RPM Guage] Robot Devices Initializing..."<<endl;
 	}
 	while (ActivateGauge) {
 		//Update RPM gauge
-		int CPSLEFT = left_fly_encoder.get_velocity();
+		int CPSLEFT = -(left_fly_encoder.get_velocity());
 		int CPSRIGHT = right_fly_encoder.get_velocity();
-		int RPMLEFT = CPSLEFT * 60;
-		int RPMRIGHT = CPSRIGHT * 60;
+		int RPMLEFT = CPSLEFT / 6;
+		int RPMRIGHT = CPSRIGHT / 6;
 		if (RPMLEFT < 1 and RPMRIGHT < 1){
 			//Disables Output if Motors are not moving, Reduces Excessive Console Spam
 		}
@@ -127,6 +184,7 @@ cout<<"[RPM Guage] Robot Devices Initializing..."<<endl;
 	}
 	
 }
+
 
 /**
  * Runs initialization code. This occurs as soon as the program is started.
@@ -171,7 +229,7 @@ cout<<"[Robot Initialization] Robot Devices Initializing..."<<endl;
 //Toggle Flywheel RPM Guage
 	if (DataMode == true){
 		cout<<"[Robot Initialization] Data Mode Selected!"<<endl;
-		flywheelrpmgauge(true); // Read line 24-29 for usage information
+		flywheelrpmgauge(false); // Read line 24-29 for usage information
 		delay(500);
 	}
 	else if (DriverMode == true){
