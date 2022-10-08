@@ -57,3 +57,5 @@ The Alliance that scores more points in the Autonomous period is awarded with te
 <li>1 Point for Each Disc Scored in a Low Goal</li>
 <li>3 Points for Each Covered Field Tile at the end of the match</li>
 <li>10 Points for the Winner of the Autonomous Bonus</li>
+</ul>
+<h3 style="color:white">Game Manual Is Available Here: <a href="https://link.vex.com/docs/2022-2023/vrc-spin-up/GameManual">https://link.vex.com/docs/2022-2023/vrc-spin-up/GameManual</a></h3>
