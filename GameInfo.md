@@ -12,7 +12,7 @@ layout: gameinfo
 
 <p style="color:white">VEX Robotics Competition Spin Up is played on a 12’x12’ square field configured as seen below. Two (2) Alliances – one (1) “red” and one (1) “blue” – composed of two (2) Teams each, compete in matches consisting of a fifteen (15) second Autonomous Period, followed by a one minute and forty-five second (1:45) Driver Controlled Period.</p>
 
-<img src="/assets/img/Field-image.jpeg" alt="VRC Spin Up Field" height="320">
+<img src="/assets/img/Field-Image.png" alt="VRC Spin Up Field" height="320">
 
 <h3 style="color:white">Game Details</h3>
 
