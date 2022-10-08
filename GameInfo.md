@@ -7,3 +7,7 @@ layout: gameinfo
 <h2 style="color:white">This Vex Season we are playing Vex VRC Spin-Up</h2>
 
 <img src="/assets/img/VRCSpin-Up2.png" alt="VRC Spin Up" height="320">
+
+
+# test
+## Test
