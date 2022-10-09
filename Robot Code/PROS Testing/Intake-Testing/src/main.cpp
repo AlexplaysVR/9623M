@@ -12,8 +12,8 @@ Instructions:
 
 // -------------------------------
 //Modes
-bool DataMode = false; //Disables Driver Control, Enables Data Collection, Increases Data Collection Speed and Accuracy
-bool DriverMode = true; //Enables Driver Control, Enables Data Collection But, At a slower rate. Reducing Accuracy
+bool DataMode = true; //Disables Driver Control, Enables Data Collection, Increases Data Collection Speed and Accuracy
+bool DriverMode = false; //Enables Driver Control, Enables Data Collection But, At a slower rate. Reducing Accuracy
 //Flywheel Speed (RPM)
 int targetRIGHTRPM = 2500; //Sets the "target" RPM of the Right Flywheel
 int targetLEFTRPM = 2000; //Sets the "target" RPM of the Left Flywheel
@@ -267,23 +267,31 @@ cout<<"[RPM Guage] Robot Devices Initializing..."<<endl;
 	if(ActivateGauge == true){
 		cout<<"[RPM Guage] RPM Guage Created and Activated!(Output will start when Flywheel RPM is higher that 1rpm)"<<endl;
 	}
+	int RPMLEFT=0;
+	int RPMRIGHT=0;
 	while (ActivateGauge) {
 		//Update RPM gauge
-		int CPSLEFT = -(left_fly_encoder.get_velocity());
-		int CPSRIGHT = right_fly_encoder.get_velocity();
-		int RPMLEFT = CPSLEFT / 6;
-		int RPMRIGHT = CPSRIGHT / 6;
 		sprintf(buffer2, "LeftTargetRPM: %i", targetLEFTRPM);
 		lv_label_set_text(target_rpm_labelleft, buffer2);
 		sprintf(buffer, "RightTargetRPM: %i", targetRIGHTRPM);
 		lv_label_set_text(target_rpm_labelright, buffer);
 		int FlyLeftMotorRPM = targetLEFTRPM / 25;
 		int FlyRightMotorRPM = targetRIGHTRPM / 25;
-		if(targetLEFTRPM > 2500){
-			targetLEFTRPM = 2500;
+		bool GuagePositive;
+
+		if (RPMLEFT > 3500) {
+			GuagePositive = false;
 		}
-		if(targetRIGHTRPM > 2500){
-			targetRIGHTRPM = 2500;
+		if (RPMLEFT < -1000) {
+			GuagePositive = true;
+		}
+		if (GuagePositive == true) {
+			RPMLEFT = RPMLEFT + 1;
+			RPMRIGHT = RPMRIGHT + 1;
+		}
+		if (GuagePositive == false) {
+			RPMLEFT = RPMLEFT - 1;
+			RPMRIGHT = RPMRIGHT - 1;
 		}
 		if (RPMLEFT < 1 and RPMRIGHT < 1){
 			lv_gauge_set_value(rpm_gaugeleft, 0, RPMLEFT);
