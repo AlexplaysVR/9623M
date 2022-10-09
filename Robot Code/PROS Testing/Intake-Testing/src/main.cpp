@@ -12,8 +12,8 @@ Instructions:
 
 // -------------------------------
 //Modes
-bool DataMode = true; //Disables Driver Control, Enables Data Collection, Increases Data Collection Speed and Accuracy
-bool DriverMode = false; //Enables Driver Control, Enables Data Collection But, At a slower rate. Reducing Accuracy
+bool DataMode = false; //Disables Driver Control, Enables Data Collection, Increases Data Collection Speed and Accuracy
+bool DriverMode = true; //Enables Driver Control, Enables Data Collection But, At a slower rate. Reducing Accuracy
 //Flywheel Speed (RPM)
 int targetRIGHTRPM = 2500; //Sets the "target" RPM of the Right Flywheel
 int targetLEFTRPM = 2000; //Sets the "target" RPM of the Left Flywheel
@@ -590,6 +590,26 @@ cout<<"[Driver Control] Robot Devices Initializing..."<<endl;
 			left_fly_mtr.move_velocity(0);
 			right_fly_mtr.move_velocity(0);
 		}
+		if(master.get_digital(DIGITAL_L1)){
+			//Increases Target RPM by 25
+			targetLEFTRPM += 10;
+		}
+		if(master.get_digital(DIGITAL_L2)){
+			//Decreases Target RPM by 25
+			targetLEFTRPM -= 10;
+		}
+		if(master.get_digital(DIGITAL_R1)){
+			//Increases Target RPM by 25
+			targetRIGHTRPM += 10;
+		}
+		if(master.get_digital(DIGITAL_R2)){
+			//Decreases Target RPM by 25
+			targetRIGHTRPM -= 10;
+		}
+		if(master.get_digital(DIGITAL_B)){
+			lv_sw_toggle(start_stop_switch);
+			delay(100);
+		}
 		//Strafe Control (Converts Joystick Input to Integer Values)
 		int turn = master.get_analog(RIGHT_JOYSTICK_X);
 		int power = master.get_analog(LEFT_JOYSTICK_Y);
@@ -606,5 +626,7 @@ cout<<"[Driver Control] Robot Devices Initializing..."<<endl;
 		left_back_mtr.move(rl);
 		right_front_mtr.move(fr);
 		right_back_mtr.move(rr);
+
+		delay(datacollectiondelay);
 	}
 }
