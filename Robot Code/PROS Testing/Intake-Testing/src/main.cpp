@@ -286,7 +286,7 @@ cout<<"[RPM Guage] Robot Devices Initializing..."<<endl;
 			GuagePositive = true;
 		}
 		if (GuagePositive == true) {
-			RPMLEFT = RPMLEFT + 100;
+			RPMLEFT = RPMLEFT + 150;
 			RPMRIGHT = RPMRIGHT + 100;
 		}
 		if (GuagePositive == false) {
