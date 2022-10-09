@@ -286,12 +286,12 @@ cout<<"[RPM Guage] Robot Devices Initializing..."<<endl;
 			GuagePositive = true;
 		}
 		if (GuagePositive == true) {
-			RPMLEFT = RPMLEFT + 1;
-			RPMRIGHT = RPMRIGHT + 1;
+			RPMLEFT = RPMLEFT + 100;
+			RPMRIGHT = RPMRIGHT + 100;
 		}
 		if (GuagePositive == false) {
-			RPMLEFT = RPMLEFT - 1;
-			RPMRIGHT = RPMRIGHT - 1;
+			RPMLEFT = RPMLEFT - 100;
+			RPMRIGHT = RPMRIGHT - 100;
 		}
 		if (RPMLEFT < 1 and RPMRIGHT < 1){
 			lv_gauge_set_value(rpm_gaugeleft, 0, RPMLEFT);
