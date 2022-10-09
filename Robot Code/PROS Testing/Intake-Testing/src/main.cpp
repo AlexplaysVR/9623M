@@ -552,7 +552,7 @@ cout<<"[Driver Control] Robot Devices Initializing..."<<endl;
 	delay(100);
 	cout<<"[Driver Control] Robot Devices Initialized!"<<endl;
 	delay(100);
-	cout<<"[Driver Control] Driver Control Enabled!"<<endl;
+	cout<<"[Driver Control] Driver Control Enabled! "<<endl;
 	while (true) {
 		//Strafe Control (Converts Joystick Input to Integer Values)
 		int turn = master.get_analog(RIGHT_JOYSTICK_X);
