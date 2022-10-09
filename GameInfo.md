@@ -6,7 +6,7 @@ layout: gameinfo
 
 <h2 style="color:white">VRC Spin-Up</h2>
 
-<img src="/assets/img/VRCSpin-Up2.png" alt="VRC Spin Up" height="576" width="1024">
+<img src="/assets/img/VRCSpin-Up2.png" alt="VRC Spin Up" height="330" width="452">
 
 <h3 style="color:white">Game Overview</h3>
 
@@ -14,7 +14,7 @@ layout: gameinfo
     VEX Robotics Competition Spin Up is played on a 12’x12’ square field configured as seen below. Two (2) Alliances – one (1) “red” and one (1) “blue” – composed of two (2) Teams each, compete in matches consisting of a fifteen (15) second Autonomous Period, followed by a one minute and forty-five second (1:45) Driver Controlled Period.
 </p>
 
-<img src="/assets/img/Field-Image.png" alt="VRC Spin Up Field" height="576" width="1024">
+<img src="/assets/img/Field-Image.png" alt="VRC Spin Up Field" height="330" width="452">
 
 <h3 style="color:white">Game Details</h3>
 
