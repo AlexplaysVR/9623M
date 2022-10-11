@@ -271,28 +271,41 @@ cout<<"[RPM Guage] Robot Devices Initializing..."<<endl;
 	int RPMRIGHT=0;
 	while (ActivateGauge) {
 		//Update RPM gauge
+		int TimeRan = TimeRan + 1;
 		sprintf(buffer2, "LeftTargetRPM: %i", targetLEFTRPM);
 		lv_label_set_text(target_rpm_labelleft, buffer2);
 		sprintf(buffer, "RightTargetRPM: %i", targetRIGHTRPM);
 		lv_label_set_text(target_rpm_labelright, buffer);
 		int FlyLeftMotorRPM = targetLEFTRPM / 25;
 		int FlyRightMotorRPM = targetRIGHTRPM / 25;
-		bool GuagePositive;
+		bool GuagePositiveLEFT;
+		bool GuagePositiveRIGHT;
 
-		if (RPMLEFT > 3500) {
-			GuagePositive = false;
+		if (RPMLEFT > 2700) {
+			GuagePositiveLEFT = false;
 		}
-		if (RPMLEFT < -1000) {
-			GuagePositive = true;
+		if (RPMLEFT < -200) {
+			GuagePositiveLEFT = true;
 		}
-		if (GuagePositive == true) {
-			RPMLEFT = RPMLEFT + 150;
-			RPMRIGHT = RPMRIGHT + 100;
+		if (RPMRIGHT > 2700) {
+			GuagePositiveRIGHT = false;
 		}
-		if (GuagePositive == false) {
-			RPMLEFT = RPMLEFT - 100;
-			RPMRIGHT = RPMRIGHT - 100;
+		if (RPMRIGHT < -200) {
+			GuagePositiveRIGHT = true;
 		}
+		if (GuagePositiveLEFT == true) {
+			RPMLEFT = RPMLEFT + 75;
+		}
+		if (GuagePositiveLEFT == false) {
+			RPMLEFT = RPMLEFT - 75;
+		}
+		if (GuagePositiveRIGHT == true) {
+			RPMRIGHT = RPMRIGHT + 50;
+		}
+		if (GuagePositiveRIGHT == false) {
+			RPMRIGHT = RPMRIGHT - 50;
+		}
+
 		if (RPMLEFT < 1 and RPMRIGHT < 1){
 			lv_gauge_set_value(rpm_gaugeleft, 0, RPMLEFT);
 			lv_gauge_set_value(rpm_gaugeright, 0, RPMRIGHT);
@@ -302,7 +315,7 @@ cout<<"[RPM Guage] Robot Devices Initializing..."<<endl;
 			//Updates RPM Gauge and Outputs RPM to Console for Data Collection
 			lv_gauge_set_value(rpm_gaugeleft, 0, RPMLEFT);
 			lv_gauge_set_value(rpm_gaugeright, 0, RPMRIGHT);
-			cout<<"L: "<<RPMLEFT<<" "<<"R: "<<RPMRIGHT<<endl;
+			cout<<TimeRan<<", "<<RPMLEFT<<", "<<RPMRIGHT<<endl;
 			delay(20);
 		}
 		if(lv_sw_get_state(start_stop_switch) == 1){
