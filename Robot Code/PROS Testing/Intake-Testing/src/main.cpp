@@ -33,8 +33,8 @@ using namespace pros;
 #define LEFT_BACK_MOTOR 2
 #define RIGHT_FRONT_MOTOR 3
 #define RIGHT_BACK_MOTOR 4
-#define RIGHT_FLY_MOTOR 5
-#define LEFT_FLY_MOTOR 6
+#define RIGHT_FLY_MOTOR 6
+#define LEFT_FLY_MOTOR 5
 //Device Declarations
 #define LEFT_FLY_ENCODER_PORT 7
 #define RIGHT_FLY_ENCODER_PORT 8
