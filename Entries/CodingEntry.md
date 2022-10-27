@@ -40,7 +40,7 @@ layout: entry
 
 <p style="color:white">Getting these controls to control the robot the way we need to is a bit challanging but can be done with a few math equations in our code. There are different patterns of addition and subtraction to get the values we want from the V5 controller. So we will set variables corresponding to it's thumbsick axis shown under //Strafe Control. Now that we have the raw controller values we need to bring it through these patterns of addition and subtraction. The code will be displayed below this in a code snipit.</p>
 <pre>
-    <code>
+  <code>
 	//Strafe Control (Converts Joystick Input to Integer Values)
 		int turn = master.get_analog(RIGHT_JOYSTICK_X);
 		int power = master.get_analog(LEFT_JOYSTICK_Y);
@@ -52,7 +52,7 @@ layout: entry
 		int rl = power + turnreversed - straferevered;
 		int fr = power - turnreversed - straferevered;
 		int rr = power - turnreversed + straferevered;
-    </code>
+  </code>
 </pre>
 
 <p style="color:white">Now that we have the final values fl, rl, fr, rr. All we have to do is tell the motors to spin according to these variables. (These variables have a maximum value of 127 according to v5 documentation) </p>
@@ -71,7 +71,19 @@ layout: entry
 
 <h2 style="color:white">Flywheel Data Logging</h2>
 
-<p style="color:white">Now the second more complicated program for this robot is the FlyWheel. We decided that while going along with building a Dual Flywheel, we are going to Collect Data and Compare RPM Drops, Optimal RPM for shooting the disks, And optimal flywheel weight. Too much flywheel weight may cause the flywheels to be unstable or for the motors overheading. Also larger Flywheels will take longer to spin up to their max speed</p>
+<p style="color:white">Now the second more complicated program for this robot is the FlyWheel. We decided that while going along with building a Dual Flywheel, we are going to Collect Data and Compare RPM Drops, Optimal RPM for shooting the disks, And optimal flywheel weight. Too much flywheel weight may cause the flywheels to be unstable or for the motors overheading. Also larger Flywheels will take longer to spin up to their max speed. To recieve any data we first need to install a rotational sensor onto our output shaft of the gear box.</p>
+<!--Picture of Rotation Sensors-->
+
+<p styles="color:white">Now that we have some useable data the first thing we need to do is convert the output from the rotational sensors from centidegrees per second to rotations per minute. I have taken the output from the rotational sensor and set them to the variable CPSLEFT and CPSRIGHT. This value is then divided by 6 to recieve Rotations per minute. The Left rotational sensor is reversed because of the </p>
+
+<pre>
+  <code>
+  	int CPSLEFT = -(left_fly_encoder.get_velocity());
+		int CPSRIGHT = right_fly_encoder.get_velocity();
+		int RPMLEFT = CPSLEFT / 6;
+		int RPMRIGHT = CPSRIGHT / 6;
+  </code>
+<pre>
 <!-- Place This Redirect Button Underneath all other text and images on page-->
 <a href="https://robotics.oavr.net/Directory">
 <button class="return" type="button">Return to Directory</button>
