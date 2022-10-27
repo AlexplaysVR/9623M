@@ -30,19 +30,19 @@ layout: directory
 <h3 style="color:white">Flywheel and Intake Combined Prototyping</h3>
 *Team Revision, One Less Member, Split Workflow*
 <p> </p>
-<h3><a href="Entries/09-2022/09-20-2022">&#8226; Flywheel And Intake Prototyping - 09/20/2022</a></h3>
+<h3><a href="Entries/09-2022/09-20-2022">&#8226; *To Be Completed* - 09/20/2022</a></h3>
 <p> </p>
-<h3><a href="Entries/09-2022/09-22-2022">&#8226; Flywheel And Intake Prototyping - 09/22/2022</a></h3>
+<h3><a href="Entries/09-2022/09-22-2022">&#8226; Reset workflow, Flywheel Prototyping, Notebook Revamp - 09/22/2022</a></h3>
 <p> </p>
-<h3><a href="Entries/09-2022/09-27-2022">&#8226; Flywheel And Intake Prototyping - 09/27/2022</a></h3>
+<h3><a href="Entries/09-2022/09-27-2022">&#8226; *To Be Completed* - 09/27/2022</a></h3>
 <p> </p>
-<h3><a href="Entries/09-2022/09-29-2022">&#8226; Flywheel And Intake Prototyping - 09/29/2022</a></h3>
+<h3><a href="Entries/09-2022/09-29-2022">&#8226; *To Be Completed* - 09/29/2022</a></h3>
 <p> </p>
-<h3><a href="Entries/10-2022/10-04-2022">&#8226; Flywheel And Intake Prototyping - 10/04/2022</a></h3>
+<h3><a href="Entries/10-2022/10-04-2022">&#8226; *To Be Completed* - 10/04/2022</a></h3>
 <p> </p>
-<h3><a href="Entries/10-2022/10-06-2022">&#8226; Flywheel And Intake Prototyping - 10/06/2022</a></h3>
+<h3><a href="Entries/10-2022/10-06-2022">&#8226; *To Be Completed* - 10/06/2022</a></h3>
 <p> </p>
-<h3><a href="Entries/10-2022/10-11-2022">&#8226; Flywheel And Intake Prototyping - 10/11/2022</a></h3>
+<h3><a href="Entries/10-2022/10-11-2022">&#8226; *To Be Completed* - 10/11/2022</a></h3>
 <p> </p>
-<h3><a href="Entries/10-2022/10-13-2022">&#8226; Flywheel And Intake Prototyping - 10/13/2022</a></h3>
+<h3><a href="Entries/10-2022/10-13-2022">&#8226; *To Be Completed* - 10/13/2022</a></h3>
 <p> </p>
