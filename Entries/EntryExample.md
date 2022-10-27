@@ -51,7 +51,7 @@ layout: entry
     </code>
 </pre>
 
-<p style="color:white">This is a template for entries, You can copy and paste this into a new markdown file and start writing an entry</p>
+<p style="color:white">Please use the Template.MD File Available from the link below</p>
 
 <a href="https://raw.githubusercontent.com/AlexplaysVR/9623M/main/Entries/Template.md">Click Here For Template File </a>
 
