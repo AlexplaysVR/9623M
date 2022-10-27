@@ -11,5 +11,6 @@ layout: default
 
 <h2 style="color:white">Judges Directory:
 <ul>
-    <li><a href="Entries/CodingEntry">Coding Entry (One For All Coding)</a>
-    <li><a href="https://robotics.oavr.net/GameInfo">Game Information</a>
+    <li><a href="Entries/CodingEntry">Coding Entry (One For All Coding)</a></li>
+    <li><a href="https://robotics.oavr.net/GameInfo">Game Information</a></li>
+</ul>

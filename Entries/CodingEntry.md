@@ -28,10 +28,10 @@ layout: entry
 </label>
 <h2 style="color:white">Items Included in this Entry:</h2>
 <ul>
-  <li> Drive Base Program - Mecanum Wheels
-  <li> Flywheel RPM Guages
-  <li> Flywheel Data Logging
-  <li> Other Robot Code
+  <li> Drive Base Program - Mecanum Wheels </li>
+  <li> Flywheel RPM Guages </li>
+  <li> Flywheel Data Logging </li>
+  <li> Other Robot Code </li>
 </ul>
 <p style="color:white"> </p>
 <h2 style="color:white">Drive Base Program - Mecanum Wheels:</h2>
