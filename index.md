@@ -13,4 +13,3 @@ layout: default
 <ul>
     <li><a href="Entries/CodingEntry">Coding Entry (One For All Coding)</a>
     <li><a href="https://robotics.oavr.net/GameInfo">Game Information</a>
-</ul>
