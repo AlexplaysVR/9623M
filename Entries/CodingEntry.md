@@ -83,7 +83,7 @@ layout: entry
 		int RPMLEFT = CPSLEFT / 6;
 		int RPMRIGHT = CPSRIGHT / 6;
   </code>
-<pre>
+</pre>
 
 <p style="color:white">Next, we have to have a way to log time in order to get acriate data from our flywheels. We can't do much with just a bunch of numbers. Within PROS V5 library, there is the RTOS Facilities C++ API. This includes all of the special funtions for the backend of PROS. Included in this is a task named "millis". This will call back the time since PROS initualized(Robot Initualization) in milliseconds. we will take this and set it to the variable "time". But to get some more user friendly we will convert this to Seconds by dividing it by 1000. This creates our new variable "timesec</p>
 
