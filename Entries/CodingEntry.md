@@ -87,7 +87,15 @@ layout: entry
 
 <p style="color:white">Next, we have to have a way to log time in order to get acriate data from our flywheels. We can't do much with just a bunch of numbers. Within PROS V5 library, there is the RTOS Facilities C++ API. This includes all of the special funtions for the backend of PROS. Included in this is a task named "millis". This will call back the time since PROS initualized(Robot Initualization) in milliseconds. we will take this and set it to the variable "time". But to get some more user friendly we will convert this to Seconds by dividing it by 1000. This creates our new variable "timesec</p>
 
-<p style="color:white">The variables "RPMLEFT", "RPMRIGHT", and "time" are now useful data. This is what we will be logging. Unfortanetly there is no way of doing this wirelessly. We will be connecting my computer to the usb port on the V5 Brain. This will allow us to connect to the terminal serial connetion. To display anything in the terminal </p>
+<p style="color:white">The variables "RPMLEFT", "RPMRIGHT", and "timesec" are now useful data. This is what we will be logging. Unfortanetly there is no way of doing this wirelessly. We will be connecting my computer to the usb port on the V5 Brain. This will allow us to connect to the terminal serial connetion. Using the library known as "cout" we can print text to the terminal. To get repeated data we're going to put this in a loop. Now all we have to do is add our variables and we have the code displayed below</p>
+
+<pre>
+    <code>
+    int nothing = yet
+    </code>
+</pre>
+
+
 <!-- Place This Redirect Button Underneath all other text and images on page-->
 <a href="https://robotics.oavr.net/Directory">
 <button class="return" type="button">Return to Directory</button>
