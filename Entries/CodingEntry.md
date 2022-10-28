@@ -74,7 +74,7 @@ layout: entry
 <p style="color:white">Now the second more complicated program for this robot is the FlyWheel. We decided that while going along with building a Dual Flywheel, we are going to Collect Data and Compare RPM Drops, Optimal RPM for shooting the disks, And optimal flywheel weight. Too much flywheel weight may cause the flywheels to be unstable or for the motors overheading. Also larger Flywheels will take longer to spin up to their max speed. To recieve any data we first need to install a rotational sensor onto our output shaft of the gear box.</p>
 <!--Picture of Rotation Sensors-->
 
-<p styles="color:white">Now that we have some useable data the first thing we need to do is convert the output from the rotational sensors from centidegrees per second to rotations per minute. I have taken the output from the rotational sensor and set them to the variable CPSLEFT and CPSRIGHT. This value is then divided by 6 to recieve Rotations per minute. The Left rotational sensor is reversed because of the </p>
+<p style="color:white">Now that we have some useable data the first thing we need to do is convert the output from the rotational sensors from centidegrees per second to rotations per minute. I have taken the output from the rotational sensor and set them to the variable CPSLEFT and CPSRIGHT. This value is then divided by 6 to recieve Rotations per minute. The Left rotational sensor is reversed because the flywheels are spinning in oposite directions and for this program we only want positive values. </p>
 
 <pre>
   <code>
@@ -84,6 +84,10 @@ layout: entry
 		int RPMRIGHT = CPSRIGHT / 6;
   </code>
 <pre>
+
+<p style="color:white">Next, we have to have a way to log time in order to get acriate data from our flywheels. We can't do much with just a bunch of numbers. Within PROS V5 library, there is the RTOS Facilities C++ API. This includes all of the special funtions for the backend of PROS. Included in this is a task named "millis". This will call back the time since PROS initualized(Robot Initualization) in milliseconds. we will take this and set it to the variable "time". But to get some more user friendly we will convert this to Seconds by dividing it by 1000. This creates our new variable "timesec</p>
+
+<p style="color:white">The variables "RPMLEFT", "RPMRIGHT", and "time" are now useful data. This is what we will be logging. Unfortanetly there is no way of doing this wirelessly. We will be connecting my computer to the usb port on the V5 Brain. This will allow us to connect to the terminal serial connetion. To display anything in the terminal </p>
 <!-- Place This Redirect Button Underneath all other text and images on page-->
 <a href="https://robotics.oavr.net/Directory">
 <button class="return" type="button">Return to Directory</button>
