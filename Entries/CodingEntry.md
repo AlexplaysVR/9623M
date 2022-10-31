@@ -111,13 +111,13 @@ layout: entry
       </xmp>
     </code>
 </pre>
-<p>("<" = "%lt;")</p>
+<p style="color:light_grey">("<" = "%lt;")</p>
 
 <h3 style="color:white"> Graphing Data </h3>
 
 <p style="color:white"> Now that we have the data outputted to the console. We can copy this data from the console to a Google Spreadsheet and make a graph so we can visably view our flywheel RPMs. My first version of this program didn't include time so our graphs weren't originally useful data as show below</p>
 
-<iframe height=350 width=600 src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRHvRfvIdquzJc13nAkHCT4FqnZLBWZsbdxunw2MzS-hJIuFX47sjtKB1cvZJQ__2FXLR82xbY1EIQw/pubchart?oid=129941958&amp;format=interactive"></iframe>
+<iframe height=350 src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRHvRfvIdquzJc13nAkHCT4FqnZLBWZsbdxunw2MzS-hJIuFX47sjtKB1cvZJQ__2FXLR82xbY1EIQw/pubchart?oid=129941958&amp;format=interactive"></iframe>
 
 <!-- Place This Redirect Button Underneath all other text and images on page-->
 <a href="https://robotics.oavr.net/Directory">
