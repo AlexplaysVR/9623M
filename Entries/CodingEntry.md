@@ -119,7 +119,9 @@ layout: entry
 
 <iframe height=350 width=600 src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRHvRfvIdquzJc13nAkHCT4FqnZLBWZsbdxunw2MzS-hJIuFX47sjtKB1cvZJQ__2FXLR82xbY1EIQw/pubchart?oid=129941958&amp;format=interactive"></iframe>
 
-<p style="color:white"></p>
+<p style="color:white"> After that we added time data. And now we have a complete useable graph. More Graphs wll be show in the Flywheel Breakdown Entry.</p>
+
+
 <!-- Place This Redirect Button Underneath all other text and images on page-->
 <a href="https://robotics.oavr.net/Directory">
 <button class="return" type="button">Return to Directory</button>
