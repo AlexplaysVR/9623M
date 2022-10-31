@@ -91,7 +91,20 @@ layout: entry
 
 <pre>
     <code>
-    int nothing = yet
+        <xmp>
+		if (RPMLEFT < 1 and RPMRIGHT < 1){ //Prevents Excessive Console Spam
+			lv_gauge_set_value(rpm_gaugeleft, 0, RPMLEFT);
+			lv_gauge_set_value(rpm_gaugeright, 0, RPMRIGHT);
+		}
+
+		else{
+			//Updates RPM Gauge and Outputs RPM to Console for Data Collection
+			lv_gauge_set_value(rpm_gaugeleft, 0, RPMLEFT);
+			lv_gauge_set_value(rpm_gaugeright, 0, RPMRIGHT);
+			cout<<"L: "<<RPMLEFT<<" "<<"R: "<<RPMRIGHT<<endl;
+			delay(20);
+		}
+      </xmp>
     </code>
 </pre>
 
