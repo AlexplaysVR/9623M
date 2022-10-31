@@ -71,6 +71,8 @@ layout: entry
 
 <h2 style="color:white">Flywheel Data Logging</h2>
 
+<h3 style="color:white">Getting Usable Data</h3>
+
 <p style="color:white">Now the second more complicated program for this robot is the FlyWheel. We decided that while going along with building a Dual Flywheel, we are going to Collect Data and Compare RPM Drops, Optimal RPM for shooting the disks, And optimal flywheel weight. Too much flywheel weight may cause the flywheels to be unstable or for the motors overheading. Also larger Flywheels will take longer to spin up to their max speed. To recieve any data we first need to install a rotational sensor onto our output shaft of the gear box.</p>
 <!--Picture of Rotation Sensors-->
 
@@ -84,6 +86,8 @@ layout: entry
 		int RPMRIGHT = CPSRIGHT / 6;
   </code>
 </pre>
+
+<h3 style="color:white">Outputting to Console</h3>
 
 <p style="color:white">Next, we have to have a way to log time in order to get acriate data from our flywheels. We can't do much with just a bunch of numbers. Within PROS V5 library, there is the RTOS Facilities C++ API. This includes all of the special funtions for the backend of PROS. Included in this is a task named "millis". This will call back the time since PROS initualized(Robot Initualization) in milliseconds. we will take this and set it to the variable "time". But to get some more user friendly we will convert this to Seconds by dividing it by 1000. This creates our new variable "timesec</p>
 
@@ -107,7 +111,11 @@ layout: entry
       </xmp>
     </code>
 </pre>
+<p>("<" = "%lt;")</p>
 
+<h3 style="color:white"> Graphing Data </h3>
+
+<p style="color:white"> Now that we have the data outputted to the console. We can copy this data from the console to a Google Spreadsheet and make a graph so we can visably view our flywheel RPMs. My first version of this program didn't include time so our graphs weren't originally useful data as show below</p>
 
 <!-- Place This Redirect Button Underneath all other text and images on page-->
 <a href="https://robotics.oavr.net/Directory">
