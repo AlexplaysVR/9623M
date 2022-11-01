@@ -39,8 +39,10 @@ layout: entry
 </ul>
 <p style="color:white"> </p>
 
-<h2 style="color:white"><a id="DriveBaseProgram">Drive Base Program - Mecanum Wheels:
-</a></h2>
+<a id="DriveBaseProgram">
+</a>
+
+<h2 style="color:white">Drive Base Program - Mecanum Wheels:</h2>
 
 <p style="color:white">While programming drive controls is usually a simple task within VexCode. Having Mecanum wheels on our robot requires manual writing of controls to enable straffing. For this, and many other reasons. Alex has decided to go with using PROS V5 to program our robot. This will allow for many more advanced programs (Like the RPM Guages Program Later in this entry). To enable strafing you have to utilize one more axis on the V5 Joystick. While a normal base (Either tank drive or split controls) only uses 2, usually one axis on the left and one on the right. We will be using 2 axis on the left thumbsick. Our control scheme will be shown in an image below. (Only Base Controls)</p>
 <!-- Insert Image Of Control With Base Controls-->
@@ -76,8 +78,9 @@ layout: entry
 
 <p>After all of this we have working drive controls for our mecanum base!</p>
 
-<h2 style="color:white"><a id="FlywheelDataLogging">Flywheel Data Logging
-</a></h2>
+<a id="FlywheelDataLogging">
+</a>
+<h2 style="color:white">Flywheel Data Logging</h2>
 
 <h3 style="color:white">Getting Usable Data</h3>
 
@@ -130,9 +133,9 @@ layout: entry
 <p style="color:white"> After that we added time data. And now we have a complete useable graph. These are just examples created while creating this program. More Acriate Data can be found on the Flywheel Entry</p>
 
 <!--Place Final Graph Example Here-->
-
-<h2 style="color:white"><a id="FlywheelRPMGuages">Flywheel RPM Guages
-</a></h2>
+<a id="FlywheelRPMGuages">
+</a>
+<h2 style="color:white">Flywheel RPM Guages</h2>
 
 <h3 style="color:white">Introduction</h3>
 
