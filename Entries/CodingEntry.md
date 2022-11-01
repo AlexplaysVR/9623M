@@ -93,7 +93,7 @@ layout: entry
 
 <p style="color:white">The variables "RPMLEFT", "RPMRIGHT", and "timesec" are now useful data. This is what we will be logging. Unfortanetly there is no way of doing this wirelessly. We will be connecting my computer to the usb port on the V5 Brain. This will allow us to connect to the terminal serial connetion. Using the library known as "cout" we can print text to the terminal. To get repeated data we're going to put this in a loop. Now all we have to do is add our variables and we have the code displayed below</p>
 
-<pre>
+<pre style="color:MediumVioletRed">
     <code>
         <xmp>
 		if (RPMLEFT < 1 and RPMRIGHT < 1){ //Prevents Excessive Console Spam
@@ -125,7 +125,16 @@ layout: entry
 
 <h2 style="color:white">Flywheel RPM Guages</h2>
 
-<p style="color:white">Now this was kind of a fun side project that Alex worked on. But, this is probably the coolest and most complicated program he has created. This program he has created was made so we can get live visual data that is easily interpretable by a human while the robot is running. Using LVGL within the PROS Library.</p>
+<h3 style="color:white">Introduction</h3>
+
+<p style="color:white">Now this was kind of a fun side project that Alex worked on. But, this is probably the coolest and most complicated program he has created. This program he has created was made so we can get live visual data that is easily interpretable by a human while the robot is running. Included within the PROS software is a program called LVGL (Light and Versatile Graphics Library). This will allow us to create much more complicated displays on the V5 Brain.</p>
+
+<h3 style="color:white">Working with LVGL</h3>
+
+<p style="color:white">To enable LVGL. All you have to do is include the Library in your code. LVGL is already included in the PROS Project.</p>
+<code>
+#include "display/lvgl.h"
+</code>
 
 <!-- Place This Redirect Button Underneath all other text and images on page-->
 <a href="https://robotics.oavr.net/Directory">
