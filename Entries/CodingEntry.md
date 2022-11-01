@@ -29,8 +29,8 @@ layout: entry
 <h2 style="color:white">Items Included in this Entry:</h2>
 <ul>
   <li> Drive Base Program - Mecanum Wheels </li>
-  <li> Flywheel RPM Guages </li>
   <li> Flywheel Data Logging </li>
+  <li> Flywheel RPM Guages </li>
   <li> Other Robot Code </li>
 </ul>
 <p style="color:white"> </p>
@@ -119,8 +119,13 @@ layout: entry
 
 <iframe height=350 width=600 src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRHvRfvIdquzJc13nAkHCT4FqnZLBWZsbdxunw2MzS-hJIuFX47sjtKB1cvZJQ__2FXLR82xbY1EIQw/pubchart?oid=129941958&amp;format=interactive"></iframe>
 
-<p style="color:white"> After that we added time data. And now we have a complete useable graph. More Graphs wll be show in the Flywheel Breakdown Entry.</p>
+<p style="color:white"> After that we added time data. And now we have a complete useable graph. These are just examples created while creating this program. More Acriate Data can be found on the Flywheel Entry</p>
 
+<!--Place Final Graph Example Here-->
+
+<h2 style="color:white">Flywheel RPM Guages</h2>
+
+<p style="color:white">Now this was kind of a fun side project that Alex worked on. But, this is probably the coolest and most complicated program he has created. This program he has created was made so we can get live visual data that is easily interpretable by a human while the robot is running. Using LVGL within the PROS Library.</p>
 
 <!-- Place This Redirect Button Underneath all other text and images on page-->
 <a href="https://robotics.oavr.net/Directory">
