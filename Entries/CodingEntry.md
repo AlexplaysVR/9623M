@@ -28,10 +28,14 @@ layout: entry
 </label>
 <h2 style="color:white">Items Included in this Entry:</h2>
 <ul>
-  <a href="DriveBaseProgram"><li> Drive Base Program - Mecanum Wheels </li></a>
-  <a><li> Flywheel Data Logging </li></a>
-  <a><li> Flywheel RPM Guages </li></a>
-  <a><li> Other Robot Code </li></a>
+  <a href="#DriveBaseProgram"><li> Drive Base Program - Mecanum Wheels </li>
+  </a>
+  <a href="#FlywheelDataLogging"><li> Flywheel Data Logging </li>
+  </a>
+  <a href="#FlywheelRPMGuages"><li> Flywheel RPM Guages </li>
+  </a>
+  <a href="#OtherRobotCode"><li> Other Robot Code </li>
+  </a>
 </ul>
 <p style="color:white"> </p>
 
@@ -71,7 +75,8 @@ layout: entry
 
 <p>After all of this we have working drive controls for our mecanum base!</p>
 
-<h2 style="color:white">Flywheel Data Logging</h2>
+<a id="FlywheelDataLogging"><h2 style="color:white">Flywheel Data Logging</h2>
+</a>
 
 <h3 style="color:white">Getting Usable Data</h3>
 
@@ -125,7 +130,8 @@ layout: entry
 
 <!--Place Final Graph Example Here-->
 
-<h2 style="color:white">Flywheel RPM Guages</h2>
+<a id="FlywheelRPMGuages"><h2 style="color:white">Flywheel RPM Guages</h2>
+</a>
 
 <h3 style="color:white">Introduction</h3>
 
@@ -134,10 +140,11 @@ layout: entry
 <h3 style="color:white">Working with LVGL</h3>
 
 <p style="color:white">To enable LVGL. All you have to do is include the Library in your code. LVGL is already included in the PROS Project.</p>
-<code>
+<pre>
+	<code>
 #include "display/lvgl.h"
-</code>
-
+	</code>
+</pre>
 <!-- Place This Redirect Button Underneath all other text and images on page-->
 <a href="https://robotics.oavr.net/Directory">
 <button class="return" type="button">Return to Directory</button>

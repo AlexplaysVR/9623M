@@ -214,7 +214,9 @@ footer {
   bottom:50px;
   -webkit-font-smoothing:subpixel-antialiased;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 @media print, screen and (max-width: 960px) {
 
   div.wrapper {
