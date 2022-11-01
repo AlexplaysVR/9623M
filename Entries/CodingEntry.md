@@ -28,13 +28,15 @@ layout: entry
 </label>
 <h2 style="color:white">Items Included in this Entry:</h2>
 <ul>
-  <li> Drive Base Program - Mecanum Wheels </li>
-  <li> Flywheel Data Logging </li>
-  <li> Flywheel RPM Guages </li>
-  <li> Other Robot Code </li>
+  <a href="DriveBaseProgram"><li> Drive Base Program - Mecanum Wheels </li></a>
+  <a><li> Flywheel Data Logging </li></a>
+  <a><li> Flywheel RPM Guages </li></a>
+  <a><li> Other Robot Code </li></a>
 </ul>
 <p style="color:white"> </p>
-<h2 style="color:white">Drive Base Program - Mecanum Wheels:</h2>
+
+<a id="DriveBaseProgram"><h2 style="color:white">Drive Base Program - Mecanum Wheels:</h2></a>
+
 <p style="color:white">While programming drive controls is usually a simple task within VexCode. Having Mecanum wheels on our robot requires manual writing of controls to enable straffing. For this, and many other reasons. Alex has decided to go with using PROS V5 to program our robot. This will allow for many more advanced programs (Like the RPM Guages Program Later in this entry). To enable strafing you have to utilize one more axis on the V5 Joystick. While a normal base (Either tank drive or split controls) only uses 2, usually one axis on the left and one on the right. We will be using 2 axis on the left thumbsick. Our control scheme will be shown in an image below. (Only Base Controls)</p>
 <!-- Insert Image Of Control With Base Controls-->
 
