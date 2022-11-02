@@ -85,7 +85,8 @@ layout: entry
 <h3 style="color:white">Getting Usable Data</h3>
 
 <p style="color:white">Now the second more complicated program for this robot is the FlyWheel. We decided that while going along with building a Dual Flywheel, we are going to Collect Data and Compare RPM Drops, Optimal RPM for shooting the disks, And optimal flywheel weight. Too much flywheel weight may cause the flywheels to be unstable or for the motors overheading. Also larger Flywheels will take longer to spin up to their max speed. To recieve any data we first need to install a rotational sensor onto our output shaft of the gear box.</p>
-<!--Picture of Rotation Sensors-->
+
+<img src="/assets/img/Flywheel-Encoders.jpg" alt="Flywheel Rotational Sensors" height="330" width="586">
 
 <p style="color:white">Now that we have some useable data the first thing we need to do is convert the output from the rotational sensors from centidegrees per second to rotations per minute. I have taken the output from the rotational sensor and set them to the variable CPSLEFT and CPSRIGHT. This value is then divided by 6 to recieve Rotations per minute. The Left rotational sensor is reversed because the flywheels are spinning in oposite directions and for this program we only want positive values. </p>
 
@@ -141,7 +142,7 @@ layout: entry
 
 <p style="color:white">Now this was kind of a fun side project that Alex worked on. But, this is probably the coolest and most complicated program he has created. This program he has created was made so we can get live visual data that is easily interpretable by a human while the robot is running. Included within the PROS software is a program called LVGL (Light and Versatile Graphics Library). This will allow us to create much more complicated displays on the V5 Brain.</p>
 
-<h3 style="color:white">Working with LVGL</h3>
+<h3 style="color:white">Enabling LVGL</h3>
 
 <p style="color:white">To enable LVGL. All you have to do is include the Library in your code. LVGL is already included in the PROS Project.</p>
 <pre>
@@ -149,6 +150,11 @@ layout: entry
 #include "display/lvgl.h"
 	</code>
 </pre>
+
+<h3 style="color:white">LVGL Version Limitations</h3>
+
+<p style="color:white">Due to version limitation, It was a very hard process getting this working with the current documentation available from LVGL. The newest version of LVGl is currently v8.3, While the version included in PROS is only v5.3. This will resrict what we can do. But we managed to find the documentation for 5.3 and we have reopened in for PROS users. That documentation is available here: https://9623-warp-drive.github.io/LVGL-5.3-Documentation/</p>
+
 <!-- Place This Redirect Button Underneath all other text and images on page-->
 <a href="https://robotics.oavr.net/Directory">
 <button class="return" type="button">Return to Directory</button>
